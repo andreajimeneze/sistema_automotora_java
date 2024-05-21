@@ -23,6 +23,9 @@ public class Bus extends Vehiculo {
         this.cantidadAsientos = cantidadAsientos;
     }
 
+    public int asientosDisponibles() {
+       return cantidadAsientos;
+    }
     @Override
     public String toString() {
         return "Bus{" +

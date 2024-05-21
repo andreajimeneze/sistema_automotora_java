@@ -2,14 +2,22 @@ package clases;
 
 public class Tienda {
 private String nombreTienda;
-private int Stock;
+private int stock;
 private Vendedor vendedor;
 private Cliente cliente;
 private Vehiculo vehiculo;
 
+public Tienda() {
+
+}
+
+public Tienda(String nombreTienda, int stock) {
+    this.nombreTienda = nombreTienda;
+    this.stock = stock;
+}
     public Tienda(String nombreTienda, int stock, Vendedor vendedor, Cliente cliente, Vehiculo vehiculo) {
         this.nombreTienda = nombreTienda;
-        Stock = stock;
+        this.stock = stock;
         this.vendedor = vendedor;
         this.cliente = cliente;
         this.vehiculo = vehiculo;
@@ -24,11 +32,11 @@ private Vehiculo vehiculo;
     }
 
     public int getStock() {
-        return Stock;
+        return stock;
     }
 
     public void setStock(int stock) {
-        Stock = stock;
+        this.stock = stock;
     }
 
     public Vendedor getVendedor() {
@@ -59,10 +67,14 @@ private Vehiculo vehiculo;
     public String toString() {
         return "Tienda{" +
                 "nombreTienda='" + nombreTienda + '\'' +
-                ", Stock=" + Stock +
+                ", Stock=" + stock +
                 ", vendedor=" + vendedor +
                 ", cliente=" + cliente +
                 ", vehiculo=" + vehiculo +
                 '}';
+    }
+
+    public String existeStock(int stock) {
+      return stock > 0 ? "El stock es de: " + stock : "No hay stock";
     }
 }

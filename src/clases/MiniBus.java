@@ -28,6 +28,9 @@ public class MiniBus extends Bus {
         this.tipoViaje = tipoViaje;
     }
 
+    public void imprimeBus() {
+        System.out.println(toString());
+    }
     @Override
     public String toString() {
         return "MiniBus{" +

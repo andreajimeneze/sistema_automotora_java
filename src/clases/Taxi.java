@@ -6,6 +6,7 @@ public class Taxi extends Vehiculo {
     public Taxi() {
 
     }
+
     public Taxi(int valorPasaje) {
         this.valorPasaje = valorPasaje;
     }
@@ -29,4 +30,18 @@ public class Taxi extends Vehiculo {
                 "valorPasaje=" + valorPasaje +
                 '}';
     }
+
+    public void pagarPasaje(int montoPagado) {
+        int vuelto = 0;
+        int faltaPago = 0;
+        if (montoPagado >= this.valorPasaje) {
+            vuelto = montoPagado - this.valorPasaje;
+            System.out.println("El vuelto a entregar al cliente es de: " + vuelto);
+
+        } else if(montoPagado < this.valorPasaje) {
+            faltaPago = this.valorPasaje - montoPagado;
+            System.out.println("Monto pagado no alcanza para pagar el pasaje. Debe pagar: $ " + faltaPago + " adicionales.");
+        }
+    }
+
 }
