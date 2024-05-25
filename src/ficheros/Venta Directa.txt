@@ -1,4 +1,0 @@
-Nombre de Venta: Venta Directa
-Fecha de Venta: 1012024
-Número de Patente: cwhz50
-Edad de Cliente: 38

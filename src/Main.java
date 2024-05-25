@@ -1,5 +1,8 @@
 import clases.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -22,22 +25,35 @@ public class Main {
         Tienda valparaiso = new Tienda("La Vía", 50);
         System.out.println(valparaiso.existeStock(valparaiso.getStock()));
 
-        Cliente cliente1 = new Cliente(38);
 
-        Cliente cliente2 = new Cliente(42);
+        // Guardar ventas en ficheros
+        List<Cliente> clientes = new ArrayList<>();
+        clientes.add(new Cliente("3333333-3", "Ray", 38 ));
+        clientes.add(new Cliente( "4444444-4", "Triny", 42));
+        clientes.add(new Cliente("2222222-2", "Milena", 32));
 
 
-        LibroVenta venta1 = new LibroVenta("Venta Directa", "01012024",  cliente1, miniBus1);
+        List<Vehiculo> listaVehiculos = new ArrayList<>();
+        listaVehiculos.add(new Bus ("platino", "CDHZ32", 27));
+        listaVehiculos.add(new Bus ("naranjo", "SZHH60", 31));
+        listaVehiculos.add(new Taxi ("negro", "JKSS22", 3500));
 
-        venta1.guardarVenta(venta1.getNombreVenta(), venta1.getFechaVenta(),miniBus1, cliente1 );
-        System.out.println(venta1);
+        System.out.println(clientes);
+        System.out.println(listaVehiculos);
 
-        LibroVenta venta2 = new LibroVenta("Venta contado", "30042023",  cliente2, bus1);
-        venta2.guardarVenta(venta2.getNombreVenta(), venta2.getFechaVenta(),bus1, cliente2 );
-        System.out.println(venta2);
 
-        LibroVenta venta3 = new LibroVenta("Venta crédito", "31052024",  cliente2, bus1);
-        venta3.guardarVenta(venta3.getNombreVenta(), venta3.getFechaVenta(),bus1, cliente2 );
-        System.out.println(venta3);
+
+        List<LibroVenta> libroVentas = new ArrayList<>();
+        libroVentas.add(new LibroVenta("Venta directa", "01012024"));
+        libroVentas.add(new LibroVenta("Venta crédito", "31052024"));
+        libroVentas.add(new LibroVenta("Venta contado", "30042023"));
+
+        System.out.println(libroVentas);
+
+        for (int i = 0; i < libroVentas.size(); i++) {
+            libroVentas.get(i).guardarVenta(libroVentas.get(i).getNombreVenta(), libroVentas.get(i).getFechaVenta(), listaVehiculos.get(i), clientes.get(i));
+        }
+
+        System.out.println(libroVentas);
     }
 }

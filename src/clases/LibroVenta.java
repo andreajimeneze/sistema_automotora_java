@@ -15,6 +15,11 @@ public class LibroVenta {
     public LibroVenta() {
 
     }
+
+    public LibroVenta(String nombreVenta, String fechaVenta) {
+        this.nombreVenta = nombreVenta;
+        this.fechaVenta = fechaVenta;
+    }
     public LibroVenta(String nombreVenta, String fechaVenta, Cliente cliente, Vehiculo vehiculo) {
         this.nombreVenta = nombreVenta;
         this.fechaVenta = fechaVenta;
@@ -22,8 +27,7 @@ public class LibroVenta {
         this.vehiculo = vehiculo;
     }
 
-    public LibroVenta(String nombreVenta, String fechaVenta, Cliente cliente) {
-    }
+
 
     public String getNombreVenta() {
         return nombreVenta;
