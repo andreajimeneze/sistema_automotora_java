@@ -1,0 +1,4 @@
+Nombre de Venta: Venta crédito
+Fecha de Venta: 31052024
+Número de Patente: WD XZ 12
+Edad de Cliente: 42

@@ -1,0 +1,4 @@
+Nombre de Venta: Venta contado
+Fecha de Venta: 30042023
+Número de Patente: WD XZ 12
+Edad de Cliente: 42
